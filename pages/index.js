@@ -2,6 +2,8 @@ import Head from "next/head";
 import { Box, Grid } from "@chakra-ui/react";
 import { SideBar } from "../src/components/SideBar";
 import { VideoSection } from "../src/components/VideoSection";
+import { Apresentation } from "../src/components/Apresentation";
+
 export default function Home() {
   return (
     <>
@@ -11,7 +13,9 @@ export default function Home() {
       </Head>
       <Grid gridTemplateColumns="80px auto" w="100%">
         <SideBar />
-        <VideoSection />
+        <VideoSection>
+          <Apresentation />
+        </VideoSection>
       </Grid>
     </>
   );
