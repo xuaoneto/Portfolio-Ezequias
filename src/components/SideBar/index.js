@@ -13,6 +13,8 @@ import {
   Input,
   Button,
   useDisclosure,
+  Container,
+  Text,
 } from "@chakra-ui/react";
 import React from "react";
 import logo from "../../assets/images/logo.svg";
@@ -21,6 +23,7 @@ import instagram from "../../assets/images/instagram.svg";
 import github from "../../assets/images/github.svg";
 import linkedin from "../../assets/images/linkedin.svg";
 import { HumbMenu } from "../HumbMenu";
+import { menuItemsArray } from "./menuItemsArray";
 
 export function SideBar({ ...rest }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -31,7 +34,7 @@ export function SideBar({ ...rest }) {
         w="80px"
         h="100vh"
         pos="sticky"
-        boxShadow="0 0 1em black"
+        boxShadow={isOpen ? null : "0 0 1em black"}
         m="0"
         justifyContent="space-between"
         _before={{
@@ -101,7 +104,27 @@ export function SideBar({ ...rest }) {
       >
         <DrawerOverlay bg="transparent" backdropFilter="blur(16px)" />
 
-        <DrawerContent ml="80px"></DrawerContent>
+        <DrawerContent
+          ml="80px"
+          minWidth="20vw"
+          bgColor="#252425"
+          fontFamily="Montserrat, sans-serif"
+        >
+          <Stack padding="80px">
+            <Text color="white" fontSize="30px">
+              Menu
+            </Text>
+            <Stack>
+              {menuItemsArray.map((item, index) => {
+                return (
+                  <Link color="white" fontSize="12px">
+                    {item.name}
+                  </Link>
+                );
+              })}
+            </Stack>
+          </Stack>
+        </DrawerContent>
       </Drawer>
     </>
   );
