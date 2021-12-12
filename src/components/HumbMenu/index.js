@@ -1,15 +1,16 @@
 import { Box, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 
-export function HumbMenu({ toggle, setToggle, title }) {
+export function HumbMenu({ toggle, onToggle, offToggle, title, ...rest }) {
   return (
     <Stack
       w="80px"
       mt="25px"
       alignItems="center"
       spacing="7px"
-      onClick={() => setToggle(!toggle)}
+      onClick={toggle ? offToggle : onToggle}
       transform={toggle ? "translateX(-11%)" : null}
+      {...rest}
     >
       <Box
         w="28px"

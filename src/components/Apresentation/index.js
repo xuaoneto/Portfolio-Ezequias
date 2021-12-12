@@ -3,8 +3,19 @@ import React from "react";
 
 export function Apresentation() {
   const [hover, setHover] = React.useState();
+
   return (
-    <Box m="20% 0 0 25%" color="white" fontSize="45px" width="620px">
+    <Box
+      m={{
+        base: "auto 10%",
+        md: "50% 0 0 15%",
+        lg: "50% 0 0 25%",
+        xl: "20% 0 0 25%",
+      }}
+      color="white"
+      fontSize={{ base: "35px", md: "45px" }}
+      width={{ base: "auto", md: "620px" }}
+    >
       <Text marginBottom="20px">
         Olá, Sou{" "}
         <Text as="span" color="#fac921">

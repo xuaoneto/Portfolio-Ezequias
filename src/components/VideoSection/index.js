@@ -4,7 +4,11 @@ import React from "react";
 export function VideoSection({ children }) {
   const playerRef = React.useRef();
   return (
-    <Stack w="100%" ml="-80px" h="100vh">
+    <Stack
+      w={{ base: "100%", md: "calc(100% + 80px)" }}
+      ml={{ base: "0", md: "-80px" }}
+      h="100vh"
+    >
       {children}
       <video
         ref={playerRef}
