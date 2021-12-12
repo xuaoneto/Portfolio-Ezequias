@@ -35,28 +35,32 @@ export function SideBar() {
       </Box>
       <Stack alignItems="center" spacing="20px" mb="25px !important">
         <Link
-          href="#"
+          href="https://github.com/ezequias"
+          target="_blank"
           transition="transform .3s"
           _hover={{ transform: "scale(1.3)" }}
         >
           <Image w="24px" src={github.src} />
         </Link>
         <Link
-          href="#"
+          href="https://ezequiasrocha.medium.com/"
+          target="_blank"
           transition="transform .3s"
           _hover={{ transform: "scale(1.3)" }}
         >
           <Image w="24px" src={medium.src} />
         </Link>
         <Link
-          href="#"
+          href="https://www.linkedin.com/in/ezequiasrocha/"
+          target="_blank"
           transition="transform .3s"
           _hover={{ transform: "scale(1.3)" }}
         >
           <Image w="24px" src={linkedin.src} />
         </Link>
         <Link
-          href="#"
+          href="https://www.instagram.com/ezequias/"
+          target="_blank"
           transition="transform .3s"
           _hover={{ transform: "scale(1.3)" }}
         >
