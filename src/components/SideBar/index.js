@@ -4,6 +4,7 @@ import {
   Image,
   Link,
   Drawer,
+  Flex,
   DrawerBody,
   DrawerFooter,
   DrawerHeader,
@@ -24,9 +25,11 @@ import github from "../../assets/images/github.svg";
 import linkedin from "../../assets/images/linkedin.svg";
 import { HumbMenu } from "../HumbMenu";
 import { menuItemsArray } from "./menuItemsArray";
+import { MenuItem } from "./menuItem";
 
 export function SideBar({ ...rest }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [hoverMenu, stateHoverMenu] = React.useState();
   const btnRef = React.useRef();
   return (
     <>
@@ -34,7 +37,7 @@ export function SideBar({ ...rest }) {
         w="80px"
         h="100vh"
         pos="sticky"
-        boxShadow={isOpen ? null : "0 0 1em black"}
+        boxShadow="0 0 1em rgba(0,0,0, 0.5)"
         m="0"
         justifyContent="space-between"
         _before={{
@@ -102,27 +105,59 @@ export function SideBar({ ...rest }) {
         onClose={onClose}
         finalFocusRef={btnRef}
       >
-        <DrawerOverlay bg="transparent" backdropFilter="blur(16px)" />
+        <DrawerOverlay backdropFilter="blur(16px)" />
 
-        <DrawerContent
-          ml="80px"
-          minWidth="20vw"
-          bgColor="#252425"
-          fontFamily="Montserrat, sans-serif"
-        >
-          <Stack padding="80px">
-            <Text color="white" fontSize="30px">
-              Menu
-            </Text>
-            <Stack>
-              {menuItemsArray.map((item, index) => {
-                return (
-                  <Link color="white" fontSize="12px">
-                    {item.name}
-                  </Link>
-                );
-              })}
-            </Stack>
+        <DrawerContent minWidth={{ md: "480px" }} bgColor="#252425">
+          <Stack justifyContent="space-between" h="100%" padding="25% 0 0 80px">
+            <Box ml="80px">
+              <Flex
+                pos="relative"
+                mb="65px"
+                w="50%"
+                onMouseOver={() => stateHoverMenu(true)}
+                onMouseOut={() => stateHoverMenu(false)}
+              >
+                <Text color="white" fontSize="30px">
+                  Menu
+                </Text>
+                <Box
+                  w={hoverMenu ? "0" : "100%"}
+                  transition="width .4s ease"
+                  ml="-50px"
+                  h="45px"
+                  bg="rgba(255, 255, 255, 0.031)"
+                />
+              </Flex>
+              <Stack>
+                {menuItemsArray.map((item, index) => {
+                  return (
+                    <MenuItem
+                      subItems={item.subItems}
+                      key={`MenuItem-${index}`}
+                    >
+                      {item.name}
+                    </MenuItem>
+                  );
+                })}
+              </Stack>
+            </Box>
+            <Flex flex="auto" alignItems="end">
+              <Text
+                whiteSpace="nowrap"
+                transform="rotate(-90deg) translateY(-120px) translateX(160px)"
+                fontSize="45px"
+                color="rgba(255, 255, 255, 0.2)"
+                pos="absolute"
+              >
+                EZEQUIAS ROCHA
+              </Text>
+              <Box
+                w="77%"
+                h="130px"
+                ml="auto"
+                bg="rgba(255, 255, 255, 0.031)"
+              />
+            </Flex>
           </Stack>
         </DrawerContent>
       </Drawer>

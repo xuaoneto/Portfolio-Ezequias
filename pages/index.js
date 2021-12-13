@@ -13,7 +13,11 @@ export default function Home() {
         <title>Ezequias Rocha</title>
         <meta name="description" content="Ezequias Rocha Portifólio" />
       </Head>
-      <Grid gridTemplateColumns={{ base: "auto", md: "80px auto" }} w="100%">
+      <Grid
+        fontFamily="Titillium Web, sans-serif"
+        gridTemplateColumns={{ base: "auto", md: "80px auto" }}
+        w="100%"
+      >
         <SideBar display={{ base: "none", md: "flex" }} />
         <VideoSection>
           <Apresentation />

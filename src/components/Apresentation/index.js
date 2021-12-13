@@ -28,7 +28,7 @@ export function Apresentation() {
         </Text>
       </Box>
       <Button
-        onMouseEnter={() => setHover(true)}
+        onMouseOver={() => setHover(true)}
         onMouseOut={() => setHover(false)}
         bg="#fac921"
         _hover={{ bg: "#fac921" }}
