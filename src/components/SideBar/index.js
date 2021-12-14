@@ -24,7 +24,7 @@ import instagram from "../../assets/images/instagram.svg";
 import github from "../../assets/images/github.svg";
 import linkedin from "../../assets/images/linkedin.svg";
 import { HumbMenu } from "../HumbMenu";
-import { menuItemsArray } from "./menuItemsArray";
+import { menuItemsArray } from "./MenuItemsArray";
 import { MenuItem } from "./menuItem";
 
 export function SideBar({ ...rest }) {
@@ -37,6 +37,7 @@ export function SideBar({ ...rest }) {
         w="80px"
         h="100vh"
         pos="sticky"
+        top="0"
         boxShadow="0 0 1em rgba(0,0,0, 0.5)"
         m="0"
         justifyContent="space-between"
@@ -128,7 +129,7 @@ export function SideBar({ ...rest }) {
                   bg="rgba(255, 255, 255, 0.031)"
                 />
               </Flex>
-              <Stack>
+              <Stack spacing="0">
                 {menuItemsArray.map((item, index) => {
                   return (
                     <MenuItem

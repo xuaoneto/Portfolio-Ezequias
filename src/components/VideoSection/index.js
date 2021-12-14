@@ -5,6 +5,7 @@ export function VideoSection({ children }) {
   const playerRef = React.useRef();
   return (
     <Stack
+      justifyContent="space-between"
       w={{ base: "100%", md: "calc(100% + 80px)" }}
       ml={{ base: "0", md: "-80px" }}
       h="100vh"
