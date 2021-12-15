@@ -15,7 +15,7 @@ export function NavBarItem({ item }) {
     >
       <Box
         width="10px"
-        h="4px"
+        h="2.5px"
         bgColor={hover ? "#fac921" : "white"}
         marginRight="8px"
       ></Box>

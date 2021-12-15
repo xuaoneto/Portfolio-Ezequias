@@ -19,13 +19,10 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import logo from "../../assets/images/logo.svg";
-import medium from "../../assets/images/medium.svg";
-import instagram from "../../assets/images/instagram.svg";
-import github from "../../assets/images/github.svg";
-import linkedin from "../../assets/images/linkedin.svg";
 import { HumbMenu } from "../HumbMenu";
 import { menuItemsArray } from "./MenuItemsArray";
 import { MenuItem } from "./menuItem";
+import { SocialIcons } from "components/SocialIcons";
 
 export function SideBar({ ...rest }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -66,38 +63,7 @@ export function SideBar({ ...rest }) {
           />
         </Box>
         <Stack alignItems="center" spacing="20px" mb="25px !important">
-          <Link
-            href="https://github.com/ezequias"
-            target="_blank"
-            transition="transform .3s"
-            _hover={{ transform: "scale(1.3)" }}
-          >
-            <Image w="24px" src={github.src} />
-          </Link>
-          <Link
-            href="https://ezequiasrocha.medium.com/"
-            target="_blank"
-            transition="transform .3s"
-            _hover={{ transform: "scale(1.3)" }}
-          >
-            <Image w="24px" src={medium.src} />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/ezequiasrocha/"
-            target="_blank"
-            transition="transform .3s"
-            _hover={{ transform: "scale(1.3)" }}
-          >
-            <Image w="24px" src={linkedin.src} />
-          </Link>
-          <Link
-            href="https://www.instagram.com/ezequias/"
-            target="_blank"
-            transition="transform .3s"
-            _hover={{ transform: "scale(1.3)" }}
-          >
-            <Image w="24px" src={instagram.src} />
-          </Link>
+          <SocialIcons />
         </Stack>
       </Stack>
       <Drawer

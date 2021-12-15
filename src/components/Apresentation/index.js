@@ -22,7 +22,7 @@ export function Apresentation() {
           Ezequias Rocha
         </Text>
       </Text>
-      <Box bg="rgba(44, 45, 50, 0.5)" borderRadius="5px" margin="0">
+      <Box bg="rgba(44, 45, 50, 0.5)" borderRadius="3px" margin="3px">
         <Text fontSize="20px" textAlign="center">
           Scrum Master, Especialista em Business Intelligence e Desenvolvedor
         </Text>
@@ -35,14 +35,14 @@ export function Apresentation() {
         marginTop="25px"
       >
         <Box
-          h="3px"
+          h="1.5px"
           transition="all 0.3s"
           bg="white"
           borderRadius="5px"
-          width={hover ? "13px" : "0"}
+          width={hover ? "20px" : "0"}
           marginRight={hover ? "11px" : "0"}
         />
-        Portifólio
+        Portfólio
       </Button>
     </Box>
   );

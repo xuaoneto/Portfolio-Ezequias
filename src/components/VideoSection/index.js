@@ -6,6 +6,7 @@ export function VideoSection({ children }) {
   return (
     <Stack
       justifyContent="space-between"
+      position="relative"
       w={{ base: "100%", md: "calc(100% + 80px)" }}
       ml={{ base: "0", md: "-80px" }}
       h="100vh"

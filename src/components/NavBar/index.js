@@ -7,7 +7,7 @@ import { ScrollDown } from "components/UI/icons/ScrollDown";
 export function NavBar() {
   const container = React.useRef();
   React.useEffect(() => {
-    if (container.current !== null) {
+    if (container.current.style !== null) {
       const fixedTopPosition = container.current.offsetTop;
       window.addEventListener("scroll", (event) => {
         if (document.documentElement.scrollTop >= fixedTopPosition) {

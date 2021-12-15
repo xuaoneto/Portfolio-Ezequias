@@ -5,6 +5,7 @@ import { VideoSection } from "../src/components/VideoSection";
 import { Apresentation } from "../src/components/Apresentation";
 import { useApplicationContext } from "../src/contexts/ApplicationContext";
 import { NavBar } from "components/NavBar";
+import { Footer } from "components/Footer";
 
 export default function Home() {
   const { isMobile } = useApplicationContext();
@@ -22,12 +23,8 @@ export default function Home() {
             <Apresentation />
             <NavBar />
           </VideoSection>
-          <Text width="5px">
-            KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
-            KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
-            KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
-            KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
-          </Text>
+          <Box w="100%" h="1500px" backgroundColor="white"></Box>
+          <Footer />
         </Box>
       </Grid>
     </>
