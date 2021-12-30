@@ -43,6 +43,7 @@ export function MenuItem({ children, link, subItems }) {
           <Image
             src={rightarrow.src}
             w="10px"
+            alt="arrow"
             transform={focus ? "rotate(90deg)" : "rotate(0)"}
             transition="transform .3s ease"
           />
@@ -59,7 +60,13 @@ export function MenuItem({ children, link, subItems }) {
           _focus={{ color: "#fac921" }}
         >
           {subItems.map((item, index) => {
-            return <SubItem name={item.name} link={item.link}></SubItem>;
+            return (
+              <SubItem
+                key={`SubItem-${index}`}
+                name={item.name}
+                link={item.link}
+              ></SubItem>
+            );
           })}
         </Stack>
       ) : null}

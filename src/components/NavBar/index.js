@@ -41,7 +41,7 @@ export function NavBar() {
         </Flex>
         <HStack justifyContent="space-evenly">
           {NavBarItemsArray.map((item, index) => {
-            return <NavBarItem item={item} />;
+            return <NavBarItem key={`NavBarItem-${index}`} item={item} />;
           })}
         </HStack>
         <Box

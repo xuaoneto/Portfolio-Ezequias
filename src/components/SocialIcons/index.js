@@ -14,7 +14,7 @@ export function SocialIcons({ size = "24px" }) {
         transition="transform .3s"
         _hover={{ transform: "scale(1.3)" }}
       >
-        <Image w={size} src={github.src} />
+        <Image alt="GitHub" w={size} src={github.src} />
       </Link>
       <Link
         href="https://ezequiasrocha.medium.com/"
@@ -22,7 +22,7 @@ export function SocialIcons({ size = "24px" }) {
         transition="transform .3s"
         _hover={{ transform: "scale(1.3)" }}
       >
-        <Image w={size} src={medium.src} />
+        <Image alt="Medium" w={size} src={medium.src} />
       </Link>
       <Link
         href="https://www.linkedin.com/in/ezequiasrocha/"
@@ -30,7 +30,7 @@ export function SocialIcons({ size = "24px" }) {
         transition="transform .3s"
         _hover={{ transform: "scale(1.3)" }}
       >
-        <Image w={size} src={linkedin.src} />
+        <Image alt="Linkedin" w={size} src={linkedin.src} />
       </Link>
       <Link
         href="https://www.instagram.com/ezequias/"
@@ -38,7 +38,7 @@ export function SocialIcons({ size = "24px" }) {
         transition="transform .3s"
         _hover={{ transform: "scale(1.3)" }}
       >
-        <Image w={size} src={instagram.src} />
+        <Image alt="Instagram" w={size} src={instagram.src} />
       </Link>
     </>
   );

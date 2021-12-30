@@ -53,7 +53,7 @@ export function SideBar({ ...rest }) {
         {...rest}
       >
         <Box>
-          <Image mx="auto" w="30px" mt="25px" src={logo.src} />
+          <Image mx="auto" w="30px" alt="logo" mt="25px" src={logo.src} />
           <HumbMenu
             toggle={isOpen}
             onToggle={onOpen}
