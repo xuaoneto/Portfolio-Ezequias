@@ -8,19 +8,17 @@ export function NavBar() {
   const container = React.useRef();
 
   React.useEffect(() => {
-    if (container !== null) {
-      if (container.current.style !== null) {
-        const fixedTopPosition = container.current.offsetTop;
-        window.addEventListener("scroll", (event) => {
-          if (document.documentElement.scrollTop >= fixedTopPosition) {
-            container.current.style.position = "fixed";
-          } else {
-            container.current.style.position = "static";
-          }
-        });
-      }
+    if (container.current.style) {
+      const fixedTopPosition = container.current.offsetTop;
+      window.addEventListener("scroll", (event) => {
+        if (document.documentElement.scrollTop >= fixedTopPosition) {
+          container.current.style.position = "fixed";
+        } else {
+          container.current.style.position = "static";
+        }
+      });
     }
-  }, []);
+  }, [container.current]);
 
   return (
     <Box

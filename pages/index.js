@@ -10,9 +10,12 @@ import { ExperienceSectionCards } from "components/Sections/ExperienceSectionCar
 import { PortifolioSection } from "components/Sections/PortifolioSection";
 import { CoursesSection } from "components/Sections/CoursesSection";
 import { GithubSection } from "components/Sections/GithubSection";
+import { Background } from "components/Background";
+import React from "react";
 
 export default function Home() {
   const { isMobile } = useApplicationContext();
+  const refBg = React.useRef(null);
 
   if (isMobile === undefined) {
     return null;
@@ -36,7 +39,16 @@ export default function Home() {
             <Apresentation />
             <NavBar />
           </VideoSection>
-          <Box w="100%" backgroundColor="white">
+          <Box
+            w="100%"
+            backgroundColor="white"
+            zIndex="1"
+            pos="relative"
+            ref={refBg}
+            overflow="hidden"
+            pb="50px"
+          >
+            <Background reference={refBg} />
             <PortifolioSection />
             <CoursesSection />
             <GithubSection />
