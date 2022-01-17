@@ -22,17 +22,19 @@ export function Background({ reference, ...rest }) {
     if (reference.current.clientHeight) {
       const width = reference.current.clientWidth;
       const height = reference.current.clientHeight;
-      setRepeatCount(new Array(Math.floor(height / 617) + 1).fill(1));
-      console.log(repeatCount);
+      setRepeatCount(
+        new Array(Math.floor(height / (0.3397 * width)) + 5).fill(1)
+      );
+      console.log(0.3397 * width, repeatCount);
     }
   }, [reference.current]);
 
   return (
     <>
       <Box pos="absolute" w="100%" zIndex="-1" opacity="0.3" top="0">
-        {repeatCount.map(() => {
+        {repeatCount.map((index) => {
           return (
-            <Box w="100%" {...rest}>
+            <Box w="100%" key={`AnimatedBackground-${index}`} {...rest}>
               <svg
                 width="100%"
                 height="100%"

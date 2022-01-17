@@ -5,7 +5,7 @@ import { NavBarItem } from "./nav-bar-item";
 import { ScrollDown } from "components/UI/icons/scroll-down";
 
 export function NavBar() {
-  const container = React.useRef();
+  const container = React.useRef(null);
 
   React.useEffect(() => {
     if (container.current.style) {
