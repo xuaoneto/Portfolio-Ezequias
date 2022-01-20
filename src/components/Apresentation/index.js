@@ -10,7 +10,8 @@ export function Apresentation() {
         base: "auto 10%",
         md: "50% 0 0 15%",
         lg: "50% 0 0 25%",
-        xl: "20% 0 0 25%",
+        xl: "13% 0 0 25%",
+        "2xl": "20% 0 0 25%",
       }}
       color="white"
       fontSize={{ base: "35px", md: "45px" }}

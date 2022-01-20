@@ -25,7 +25,6 @@ export function Background({ reference, ...rest }) {
       setRepeatCount(
         new Array(Math.floor(height / (0.3397 * width)) + 5).fill(1)
       );
-      console.log(0.3397 * width, repeatCount);
     }
   }, [reference.current]);
 
