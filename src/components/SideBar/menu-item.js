@@ -3,10 +3,13 @@ import React from "react";
 import rightarrow from "assets/images/rightarrow.svg";
 import { SubItem } from "./sub-item";
 
-export function MenuItem({ itemName, link, subItems, focus, setFocus }) {
+export function MenuItem({ itemName, link, subItems, focus, setFocus, close }) {
   const [hover, stateHover] = React.useState();
 
   const ref = React.useRef();
+
+  const scrollTo = link && link.indexOf("#") != -1;
+
   return (
     <>
       <Link
@@ -15,6 +18,7 @@ export function MenuItem({ itemName, link, subItems, focus, setFocus }) {
         fontSize="12px"
         onClick={() => {
           focus === itemName ? setFocus(false) : setFocus(itemName);
+          scrollTo ? close(link) : null;
         }}
         _hover={{ color: "#fac921" }}
         onMouseOver={() => stateHover(true)}

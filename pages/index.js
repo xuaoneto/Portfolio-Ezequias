@@ -7,15 +7,27 @@ import { useApplicationContext } from "contexts/ApplicationContext";
 import { NavBar } from "components/NavBar";
 import { Footer } from "components/Footer";
 import { ExperienceSectionCards } from "components/Sections/ExperienceSectionCards";
-import { PortifolioSection } from "components/Sections/PortifolioSection";
+import { PortfolioSection } from "components/Sections/PortfolioSection";
 import { CoursesSection } from "components/Sections/CoursesSection";
 import { GithubSection } from "components/Sections/GithubSection";
 import { Background } from "components/Background";
 import React from "react";
+import WhoIAm from "components/Sections/WhoIAmSection";
+import { ServicesSection } from "components/Sections/ServicesSection";
 
 export default function Home() {
   const { isMobile } = useApplicationContext();
   const refBg = React.useRef(null);
+  const handleScrollTo = (id) => (event) => {
+    event.preventDefault();
+    const element = document.querySelector(id);
+    const rect = element.getBoundingClientRect();
+    window.scrollBy({
+      top: rect.top - 140,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
 
   if (isMobile === undefined) {
     return null;
@@ -36,8 +48,8 @@ export default function Home() {
 
         <Box>
           <VideoSection>
-            <Apresentation />
-            <NavBar />
+            <Apresentation handleScrollTo={handleScrollTo} />
+            <NavBar handleScrollTo={handleScrollTo} />
           </VideoSection>
           <Box
             w="100%"
@@ -49,10 +61,12 @@ export default function Home() {
             pb="50px"
           >
             <Background reference={refBg} />
-            <PortifolioSection />
+            <WhoIAm />
+            <PortfolioSection />
             <CoursesSection />
             <GithubSection />
             <ExperienceSectionCards />
+            <ServicesSection />
           </Box>
           <Footer />
         </Box>

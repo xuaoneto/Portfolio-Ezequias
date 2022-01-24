@@ -1,26 +1,26 @@
 export const NavBarItemsArray = [
   {
     name: "HOME",
-    link: "#",
+    link: "#VideoSection",
   },
   {
     name: "PORTFÓLIO",
-    link: "#",
+    link: "#PortfolioSection",
   },
   {
     name: "SERVIÇOS",
-    link: "#",
+    link: "#ServicesSection",
   },
   {
     name: "GITHUB",
-    link: "#",
+    link: "#GithubSection",
   },
   {
     name: "BLOG",
-    link: "#",
+    link: "#BlogSection",
   },
   {
     name: "CONTATO",
-    link: "#",
+    link: "#ContactSection",
   },
 ];

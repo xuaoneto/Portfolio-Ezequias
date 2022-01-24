@@ -4,7 +4,7 @@ import { NavBarItemsArray } from "./nav-bar-items-array";
 import { NavBarItem } from "./nav-bar-item";
 import { ScrollDown } from "components/UI/icons/scroll-down";
 
-export function NavBar() {
+export function NavBar({ handleScrollTo }) {
   const container = React.useRef(null);
 
   React.useEffect(() => {
@@ -44,7 +44,13 @@ export function NavBar() {
         </Flex>
         <HStack justifyContent="space-evenly">
           {NavBarItemsArray.map((item, index) => {
-            return <NavBarItem key={`NavBarItem-${index}`} item={item} />;
+            return (
+              <NavBarItem
+                key={`NavBarItem-${index}`}
+                item={item}
+                handleScrollTo={handleScrollTo}
+              />
+            );
           })}
         </HStack>
         <Box
@@ -52,7 +58,7 @@ export function NavBar() {
           h="100%"
           backgroundColor="rgba(255, 255, 255, 0.031 )"
           borderLeft="2px solid rgba(255, 255, 255, 0.2 )"
-        ></Box>
+        />
       </Grid>
     </Box>
   );

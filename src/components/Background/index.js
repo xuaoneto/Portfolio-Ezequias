@@ -14,7 +14,7 @@ export function Background({ reference, ...rest }) {
   React.useEffect(() => {
     const interval = setInterval(() => {
       setPulse(`pulse ${getRandomInt(1, 11)}`);
-    }, 4050);
+    }, 4000);
     return () => clearInterval(interval);
   }, [pulse]);
 
@@ -33,7 +33,7 @@ export function Background({ reference, ...rest }) {
       <Box pos="absolute" w="100%" zIndex="-1" opacity="0.3" top="0">
         {repeatCount.map((index) => {
           return (
-            <Box w="100%" key={`AnimatedBackground-${index}`} {...rest}>
+            <Box w="100%" key={`AnimatedBackground-${index}}`} {...rest}>
               <svg
                 width="100%"
                 height="100%"

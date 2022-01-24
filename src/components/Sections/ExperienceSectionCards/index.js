@@ -7,9 +7,10 @@ export function ExperienceSectionCards() {
   return (
     <Section title="Experiências de trabalho">
       <Grid
-        w="100%"
+        w={{ base: "90%", md: "70%" }}
         gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr", xl: "1fr 1fr 1fr" }}
-        gridRowGap="30px"
+        gap="30px"
+        mx="auto!important"
       >
         {JobCardArray.map((item, index) => {
           return (
@@ -19,6 +20,7 @@ export function ExperienceSectionCards() {
               image={item.image}
               abstract={item.abstract}
               type="job"
+              w="100%"
             />
           );
         })}

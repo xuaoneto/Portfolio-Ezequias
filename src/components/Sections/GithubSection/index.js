@@ -4,7 +4,7 @@ import github from "assets/images/SectionImages/github.jpg";
 
 export function GithubSection() {
   return (
-    <Section title="Github" alignItems="center">
+    <Section title="Github" id="GithubSection" alignItems="center">
       <Card
         image={github.src}
         type="resume-content"

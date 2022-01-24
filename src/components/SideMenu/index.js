@@ -13,6 +13,20 @@ import React from "react";
 
 export function SideMenu({ isOpen, onClose, btnRef }) {
   const [focus, setFocus] = React.useState(false);
+
+  function close(link) {
+    onClose();
+    setTimeout(() => {
+      const element = document.querySelector(link);
+      const rect = element.getBoundingClientRect();
+      window.scrollBy({
+        top: rect.top - 140,
+        left: 0,
+        behavior: "smooth",
+      });
+    }, 500);
+  }
+
   return (
     <Drawer
       isOpen={isOpen}
@@ -59,6 +73,8 @@ export function SideMenu({ isOpen, onClose, btnRef }) {
                     focus={focus}
                     setFocus={setFocus}
                     itemName={item.name}
+                    link={item.link}
+                    close={close}
                   />
                 );
               })}

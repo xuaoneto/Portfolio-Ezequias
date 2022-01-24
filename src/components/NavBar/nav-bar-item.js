@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Link } from "@chakra-ui/react";
 
-export function NavBarItem({ item }) {
+export function NavBarItem({ item, handleScrollTo }) {
   const [hover, setHover] = React.useState(false);
   return (
     <Link
@@ -12,13 +12,14 @@ export function NavBarItem({ item }) {
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
       color={hover ? "#fac921" : "white"}
+      onClick={handleScrollTo(item.link)}
     >
       <Box
         width="10px"
         h="2.5px"
         bgColor={hover ? "#fac921" : "white"}
         marginRight="8px"
-      ></Box>
+      />
       {item.name}
     </Link>
   );

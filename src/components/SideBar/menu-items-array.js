@@ -1,19 +1,19 @@
 export const menuItemsArray = [
   {
     name: "HOME",
-    link: "#",
+    link: "#VideoSection",
   },
   {
     name: "PORTFÓLIO",
-    link: "#",
+    link: "#PortfolioSection",
   },
   {
     name: "SERVIÇOS",
-    link: "#",
+    link: "#ServicesSection",
   },
   {
     name: "GITHUB",
-    link: "#",
+    link: "#GithubSection",
   },
   {
     name: "REDES SOCIAIS",
@@ -39,9 +39,6 @@ export const menuItemsArray = [
   {
     name: "CONTATO",
     subItems: [
-      {
-        name: "+55 83 99908-6773",
-      },
       {
         name: "ezequiasrocha@gmail.com",
       },

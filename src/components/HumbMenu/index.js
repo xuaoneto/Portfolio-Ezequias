@@ -21,6 +21,7 @@ export function HumbMenu({
       transform={toggle ? "translateX(-11%)" : null}
       onMouseOver={() => stateHover(true)}
       onMouseOut={() => stateHover(false)}
+      id="toggleMenu"
       {...rest}
     >
       <Box>

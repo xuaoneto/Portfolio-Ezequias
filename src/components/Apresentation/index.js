@@ -1,7 +1,7 @@
 import { Box, Text, Button } from "@chakra-ui/react";
 import React from "react";
 
-export function Apresentation() {
+export function Apresentation({ handleScrollTo }) {
   const [hover, setHover] = React.useState();
 
   return (
@@ -11,7 +11,7 @@ export function Apresentation() {
         md: "50% 0 0 15%",
         lg: "50% 0 0 25%",
         xl: "13% 0 0 25%",
-        "2xl": "20% 0 0 25%",
+        "2xl": "16% 0 0 25%",
       }}
       color="white"
       fontSize={{ base: "35px", md: "45px" }}
@@ -31,6 +31,7 @@ export function Apresentation() {
         bg="#fac921"
         _hover={{ bg: "#fac921" }}
         marginTop="25px"
+        onClick={handleScrollTo("#PortfolioSection")}
       >
         <Box
           h="2px"

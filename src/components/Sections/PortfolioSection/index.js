@@ -2,9 +2,9 @@ import { Section } from "components/Section";
 import portfolio from "assets/images/SectionImages/portfolio.jpg";
 import { Card } from "components/Card";
 
-export function PortifolioSection() {
+export function PortfolioSection() {
   return (
-    <Section title="Portfólio" alignItems="center">
+    <Section title="Portfólio" id="PortfolioSection" alignItems="center">
       <Card
         image={portfolio.src}
         type="resume-content"

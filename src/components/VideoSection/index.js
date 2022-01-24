@@ -9,6 +9,7 @@ export function VideoSection({ children }) {
       w={{ base: "100%", md: "calc(100% + 80px)" }}
       ml={{ base: "0", md: "-80px" }}
       h="100vh"
+      id="VideoSection"
     >
       <Stack justifyContent="space-between" h="100%" zIndex="3">
         {children}
