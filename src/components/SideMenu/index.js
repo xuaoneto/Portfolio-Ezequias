@@ -9,10 +9,12 @@ import {
 } from "@chakra-ui/react";
 import { MenuItem } from "components/SideBar/menu-item";
 import { menuItemsArray } from "components/SideBar/menu-items-array";
+import { useApplicationContext } from "contexts/ApplicationContext";
 import React from "react";
 
 export function SideMenu({ isOpen, onClose, btnRef }) {
   const [focus, setFocus] = React.useState(false);
+  const { base, sm } = useApplicationContext();
 
   function close(link) {
     onClose();
@@ -34,7 +36,7 @@ export function SideMenu({ isOpen, onClose, btnRef }) {
       onClose={onClose}
       finalFocusRef={btnRef}
     >
-      <DrawerOverlay backdropFilter="blur(16px)" />
+      <DrawerOverlay backdropFilter={base || sm ? null : "blur(16px)"} />
 
       <DrawerContent
         minWidth={{ md: "480px", xl: "420px", "2xl": "480px" }}
