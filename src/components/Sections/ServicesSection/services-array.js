@@ -6,7 +6,7 @@ import { ProgrammingIcon } from "components/UI/icons/programming-icon";
 export const ServicesArray = [
   {
     title: (
-      <Text fontSize={{ base: "13", md: "15", xl: "20px" }}>
+      <Text fontSize={{ base: "15", xl: "20px" }}>
         Consultoria em Gestão Ágil
       </Text>
     ),
@@ -14,7 +14,7 @@ export const ServicesArray = [
   },
   {
     title: (
-      <Text fontSize={{ base: "13", md: "15", xl: "20px" }}>
+      <Text fontSize={{ base: "15", xl: "20px" }}>
         Construção de solução em Business Intelligence
       </Text>
     ),
@@ -22,7 +22,7 @@ export const ServicesArray = [
   },
   {
     title: (
-      <Text fontSize={{ base: "13", md: "15", xl: "20px" }}>
+      <Text fontSize={{ base: "15", xl: "20px" }}>
         Desenvolvimento Backend Python/.NET
       </Text>
     ),
