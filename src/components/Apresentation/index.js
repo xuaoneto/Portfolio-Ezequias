@@ -20,7 +20,12 @@ export function Apresentation({ handleScrollTo }) {
       <Text marginBottom="20px">
         Olá, eu sou <Text color="#fac921">Ezequias Rocha</Text>
       </Text>
-      <Box bg="rgba(44, 45, 50, 0.5)" borderRadius="3px" margin="3px">
+      <Box
+        bg="rgba(44, 45, 50, 0.5)"
+        borderRadius="3px"
+        margin="3px"
+        px={{ base: "8px", md: "0" }}
+      >
         <Text fontSize="20px" textAlign="center">
           Scrum Master, Especialista em Business Intelligence e Desenvolvedor
         </Text>

@@ -15,7 +15,7 @@ export function MenuItem({ itemName, link, subItems, focus, setFocus, close }) {
       <Link
         ref={ref}
         color={focus === itemName ? "#fac921" : "white"}
-        fontSize="12px"
+        fontSize={{ base: "13", md: "14", xl: "12", "2xl": "14" }}
         onClick={() => {
           focus === itemName ? setFocus(false) : setFocus(itemName);
           scrollTo ? close(link) : null;

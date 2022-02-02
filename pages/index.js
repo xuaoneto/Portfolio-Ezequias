@@ -11,13 +11,15 @@ import { PortfolioSection } from "components/Sections/PortfolioSection";
 import { CoursesSection } from "components/Sections/CoursesSection";
 import { GithubSection } from "components/Sections/GithubSection";
 import { Background } from "components/Background";
-import React from "react";
+import React, { useRef } from "react";
 import WhoIAm from "components/Sections/WhoIAmSection";
 import { ServicesSection } from "components/Sections/ServicesSection";
+import { BlogSection } from "components/Sections/BlogSection";
+import axios from "axios";
 
 export default function Home() {
   const { isMobile } = useApplicationContext();
-  const refBg = React.useRef(null);
+  const refBg = useRef(null);
   const handleScrollTo = (id) => (event) => {
     event.preventDefault();
     const element = document.querySelector(id);
@@ -38,6 +40,7 @@ export default function Home() {
         <title>Ezequias Rocha</title>
         <meta name="description" content="Ezequias Rocha Portfólio" />
       </Head>
+
       <Grid
         gridTemplateColumns={{ base: "1fr", md: "80px auto" }}
         w="100%"
@@ -45,7 +48,6 @@ export default function Home() {
         bg="#2c2d32"
       >
         <SideBar />
-
         <Box>
           <VideoSection>
             <Apresentation handleScrollTo={handleScrollTo} />
@@ -67,6 +69,7 @@ export default function Home() {
             <GithubSection />
             <ExperienceSectionCards />
             <ServicesSection />
+            <BlogSection />
           </Box>
           <Footer />
         </Box>

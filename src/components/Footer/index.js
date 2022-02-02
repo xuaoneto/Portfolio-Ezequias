@@ -8,6 +8,7 @@ import {
   Text,
   Button,
   Link,
+  Stack,
 } from "@chakra-ui/react";
 import { Phone } from "components/UI/icons/phone";
 import { SocialIcons } from "components/SocialIcons";
@@ -55,20 +56,14 @@ export function Footer() {
           </Button>
         </Flex>
 
-        <Grid
+        <Stack
           w="80%"
           marginTop="80px"
           marginBottom="80px"
-          templateColumns={{ base: "1fr", md: "1fr 1fr 1fr 1fr" }}
-
-          // alignItems="center"
-          // justifyContent="space-evenly"
+          alignItems="center"
+          justifyContent="center"
         >
-          <Grid w="100%">column</Grid>
-          <Box w="100%">column</Box>
-          <Box w="100%">column</Box>
-          <Box w="100%">
-            <Text>Siga-me</Text>
+          <Stack alignItems="center" spacing="15px" textAlign="center">
             <Flex
               alignItems="center"
               mt="20px"
@@ -77,8 +72,14 @@ export function Footer() {
             >
               <SocialIcons />
             </Flex>
-          </Box>
-        </Grid>
+            <Flex alignItems="start">
+              <Link mr="20px">Home</Link>
+              <Link mr="20px">Serviços</Link>
+              <Link mr="20px">Blog</Link>
+              <Link>Adquira meu curso</Link>
+            </Flex>
+          </Stack>
+        </Stack>
       </Flex>
     </Box>
   );

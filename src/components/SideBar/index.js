@@ -5,12 +5,14 @@ import { HumbMenu } from "../HumbMenu";
 import { SocialIcons } from "components/SocialIcons";
 import { useApplicationContext } from "contexts/ApplicationContext";
 import { SideMenu } from "components/SideMenu";
+import { useSmoothScrollContext } from "components/SmoothScroll";
 
 export function SideBar({ ...rest }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const btnRef = React.useRef();
   const { base, sm } = useApplicationContext();
+
   return (
     <>
       {base || sm ? (
@@ -33,9 +35,10 @@ export function SideBar({ ...rest }) {
         />
       ) : (
         <Stack
-          w="80px"
+          w="100%"
           h="100vh"
           pos="sticky"
+          transition="all 460ms ease-out"
           top="0"
           boxShadow="0 0 1em rgba(0,0,0, 0.5)"
           m="0"

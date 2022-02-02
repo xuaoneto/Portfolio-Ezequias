@@ -6,24 +6,27 @@ import { ScrollDown } from "components/UI/icons/scroll-down";
 
 export function NavBar({ handleScrollTo }) {
   const container = React.useRef(null);
+  const [pos, setPos] = React.useState("static");
 
   React.useEffect(() => {
-    if (container.current.style) {
+    if (container.current) {
       const fixedTopPosition = container.current.offsetTop;
+
       window.addEventListener("scroll", (event) => {
         if (document.documentElement.scrollTop >= fixedTopPosition) {
-          container.current.style.position = "fixed";
+          setPos("fixed");
         } else {
-          container.current.style.position = "static";
+          setPos("static");
         }
       });
     }
-  }, [container.current]);
+  }, []);
 
   return (
     <Box
       marginTop="0 !important"
       top="0"
+      pos={pos}
       ref={container}
       backgroundColor="#2c2d32"
       width="calc(100% - 80px)"
