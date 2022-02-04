@@ -34,7 +34,13 @@ export function NavBar({ handleScrollTo }) {
       marginLeft="80px !important"
       display={{ base: "none", lg: "block" }}
     >
-      <Grid color="white" templateColumns="17% 66% 17%" w="100%" h="100%">
+      <Grid
+        color="white"
+        templateColumns="17% 66% 17%"
+        w="100%"
+        h="100%"
+        boxShadow="0 0 1em rgba(0,0,0, 0.4)"
+      >
         <Flex
           w="100%"
           h="100%"

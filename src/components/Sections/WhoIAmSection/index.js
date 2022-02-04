@@ -1,5 +1,6 @@
 import { Box, Flex, Grid, Stack, Text } from "@chakra-ui/react";
 import { Section } from "components/Section";
+import perfil from "assets/images/SectionImages/perfil-image.jpeg";
 
 export default function WhoIAm() {
   return (
@@ -18,7 +19,8 @@ export default function WhoIAm() {
         _hover={{ boxShadow: "0 0 20px rgb(0 0 0 / 40%)" }}
       >
         <Box
-          bg="#fac921"
+          bgImage={perfil.src}
+          boxShadow="0 0 20px rgba(0,0,0, 0.2)"
           borderRadius="50%"
           w={{ base: "50%", md: "35%", xl: "25%" }}
           bgPos="center"

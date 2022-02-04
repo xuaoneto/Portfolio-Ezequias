@@ -1,4 +1,4 @@
-import { Box, Link, Stack, Text } from "@chakra-ui/react";
+import { Link, Stack, Text } from "@chakra-ui/react";
 import axios from "axios";
 import { Section } from "components/Section";
 import { useEffect, useState } from "react";
@@ -37,11 +37,12 @@ export function BlogSection() {
                     display="flex"
                     key={`post-${index}`}
                     w="100%"
-                    bg="#f2f2f2"
+                    bg="#2D2D32"
                     p="20px 15px"
                     borderRadius="7px"
-                    transition="background .3s"
-                    _hover={{ bg: "#eee" }}
+                    transition="all .3s"
+                    color="white"
+                    _hover={{ color: "#fac921" }}
                     href={item.link}
                     target="_blank"
                   >

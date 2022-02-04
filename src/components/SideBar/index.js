@@ -5,7 +5,6 @@ import { HumbMenu } from "../HumbMenu";
 import { SocialIcons } from "components/SocialIcons";
 import { useApplicationContext } from "contexts/ApplicationContext";
 import { SideMenu } from "components/SideMenu";
-import { useSmoothScrollContext } from "components/SmoothScroll";
 
 export function SideBar({ ...rest }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
