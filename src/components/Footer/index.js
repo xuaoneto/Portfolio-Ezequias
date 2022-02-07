@@ -14,6 +14,16 @@ import { Phone } from "components/UI/icons/phone";
 import { SocialIcons } from "components/SocialIcons";
 
 export function Footer() {
+  const handleScrollTo = (id) => (event) => {
+    event.preventDefault();
+    const element = document.querySelector(id);
+    const rect = element.getBoundingClientRect();
+    window.scrollBy({
+      top: rect.top - 140,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <Box w="100%" pt="70px" bg="#fff">
       <Flex
@@ -73,10 +83,16 @@ export function Footer() {
               <SocialIcons />
             </Flex>
             <Flex alignItems="start">
-              <Link mr="20px">Home</Link>
-              <Link mr="20px">Serviços</Link>
-              <Link mr="20px">Blog</Link>
-              <Link>Adquira meu curso</Link>
+              <Link mr="20px" onClick={handleScrollTo("#VideoSection")}>
+                Home
+              </Link>
+              <Link mr="20px" onClick={handleScrollTo("#ServicesSection")}>
+                Serviços
+              </Link>
+              <Link mr="20px" onClick={handleScrollTo("#BlogSection")}>
+                Blog
+              </Link>
+              <Link>Adquira meu curso (Em breve)</Link>
             </Flex>
           </Stack>
         </Stack>

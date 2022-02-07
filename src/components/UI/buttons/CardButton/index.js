@@ -1,6 +1,8 @@
 import { Box, Button } from "@chakra-ui/react";
+import { useState } from "react";
 
-export function CardButton({ children, hovered, setHovered, ...rest }) {
+export function CardButton({ children, ...rest }) {
+  const [hovered, setHovered] = useState(false);
   return (
     <Button
       p="0.5rem 1rem"

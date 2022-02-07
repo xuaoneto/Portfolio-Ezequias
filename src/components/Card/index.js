@@ -5,6 +5,7 @@ import {
   Button,
   Box,
   useDisclosure,
+  Link,
 } from "@chakra-ui/react";
 import React from "react";
 import { ModalContentCustom } from "components/ModalContentCustom";
@@ -14,13 +15,14 @@ export function Card({
   title,
   abstract,
   image,
+  link,
+  logo,
   type = "resume-content",
   height,
   ...rest
 }) {
   // Types: job, resume-content
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [hovered, setHovered] = React.useState(false);
 
   return (
     <>
@@ -37,17 +39,19 @@ export function Card({
         {...rest}
       >
         {type === "job" ? (
-          <Box
-            w="100%"
-            m="0 important"
-            bgImage={image}
-            bgSize="100%"
-            h="200px"
-            bgRepeat="no-repeat"
-            p="0"
-            transition="all .4s"
-            _hover={{ bgSize: "150%", bgPos: "center" }}
-          />
+          <Box w="100%" bg="#2D2D32">
+            <Box
+              w="100%"
+              m="0 important"
+              bgImage={logo}
+              bgSize={{ base: "50%", "2xl": "45%" }}
+              bgPos="center"
+              h="200px"
+              bgRepeat="no-repeat"
+              p="0"
+              transition="all .4s"
+            />
+          </Box>
         ) : null}
         {type === "resume-content" ? (
           <Box
@@ -72,14 +76,15 @@ export function Card({
             </Text>
             <Text fontSize="18px" w="80%" mb="auto !important">
               {abstract}
+              <br />
+              <br />
+              <Link href={link} target="_blank">
+                Site da empresa
+              </Link>
             </Text>
           </>
         ) : null}
-        <CardButton
-          hovered={hovered}
-          setHovered={setHovered}
-          onClick={isOpen ? () => onClose() : () => onOpen()}
-        >
+        <CardButton onClick={isOpen ? () => onClose() : () => onOpen()}>
           Clique para {isOpen ? "Reduzir" : "Ampliar"}
         </CardButton>
       </Stack>

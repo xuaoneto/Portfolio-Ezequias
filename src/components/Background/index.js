@@ -31,9 +31,9 @@ export function Background({ reference, ...rest }) {
   return (
     <>
       <Box pos="absolute" w="100%" zIndex="-1" opacity="0.3" top="0">
-        {repeatCount.map((index) => {
+        {repeatCount.map((item, index) => {
           return (
-            <Box w="100%" key={`AnimatedBackground-${index}}`} {...rest}>
+            <Box w="100%" key={`AnimatedBackground-${index}`} {...rest}>
               <svg
                 width="100%"
                 height="100%"
