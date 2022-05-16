@@ -12,7 +12,7 @@ export function CardButton({ children, ...rest }) {
       border="1px solid rgba(0,0,0, 0.2)"
       mt="15px !important"
       mb="40px !important"
-      _hover={{ background: "#2c2d32", color: "#fac921" }}
+      _hover={{ background: "#2c2d32", color: "#fac921", textDecor: "none" }}
       fontSize="15px"
       onMouseOver={() => setHovered(true)}
       onMouseOut={() => setHovered(false)}

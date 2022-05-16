@@ -6,6 +6,7 @@ import {
   Box,
   useDisclosure,
   Link,
+  Flex,
 } from "@chakra-ui/react";
 import React from "react";
 import { ModalContentCustom } from "components/ModalContentCustom";
@@ -19,6 +20,7 @@ export function Card({
   logo,
   type = "resume-content",
   height,
+  extra,
   ...rest
 }) {
   // Types: job, resume-content
@@ -84,9 +86,12 @@ export function Card({
             </Text>
           </>
         ) : null}
-        <CardButton onClick={isOpen ? () => onClose() : () => onOpen()}>
-          Clique para {isOpen ? "Reduzir" : "Ampliar"}
-        </CardButton>
+        <Flex>
+          <CardButton onClick={isOpen ? () => onClose() : () => onOpen()}>
+            Clique para {isOpen ? "Reduzir" : "Ampliar"}
+          </CardButton>
+          {extra}
+        </Flex>
       </Stack>
       {type === "job" ? (
         <ModalContentCustom

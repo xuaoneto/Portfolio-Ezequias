@@ -92,7 +92,12 @@ export function Footer() {
               <Link mr="20px" onClick={handleScrollTo("#BlogSection")}>
                 Blog
               </Link>
-              <Link>Adquira meu curso (Em breve)</Link>
+              <Link
+                target="_blank"
+                href="https://www.udemy.com/course/curso-de-desenho-vetorial-com-inkscape/learn/lecture/31062278"
+              >
+                Adquira meu curso
+              </Link>
             </Flex>
           </Stack>
         </Stack>
