@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, Image, Link, Stack, Text } from "@chakra-ui/react";
 import { Section } from "components/Section";
 import perfil from "assets/images/SectionImages/perfil-image.jpeg";
 
@@ -18,17 +18,40 @@ export default function WhoIAm() {
         transition="box-shadow .4s"
         _hover={{ boxShadow: "0 0 20px rgb(0 0 0 / 40%)" }}
       >
-        <Box
-          bgImage={perfil.src}
-          boxShadow="0 0 20px rgba(0,0,0, 0.2)"
-          borderRadius="50%"
-          w={{ base: "50%", md: "35%", xl: "25%" }}
-          bgPos="center"
-          bgSize="cover"
-          pb={{ base: "50%", md: "35%", xl: "25%" }}
-          mt={{ base: "-25%", md: "-17.5%", xl: "-12.5%" }}
-        />
-        <Grid w="100%" mt="25px!important" templateColumns="auto auto auto">
+        <Flex alignItems="start">
+          <Image
+            src="/circles.png"
+            h={{ base: "7.5vh", xl: "7.5vw" }}
+            mt={{ base: "-6.505vh", xl: "-6.505vw" }}
+            mr="-1vw"
+            mb="auto"
+            alt=""
+          />
+          <Box
+            bgImage={perfil.src}
+            boxShadow="0 0 20px rgba(0,0,0, 0.2)"
+            borderRadius="50%"
+            w={{ base: "11.1vh", xl: "11.1vw" }}
+            h={{ base: "11.1vh", xl: "11.1vw" }}
+            mt={{ base: "-5.505vh", xl: "-5.505vw" }}
+            mb="25px"
+            bgSize="cover"
+          />
+          <Link
+            w={{ base: "7.7664vh", xl: "7.7664vw" }}
+            href="https://trailblazer.me/id/ezequiasrocha"
+            target="_blank"
+            _focus={{}}
+          >
+            <Image
+              src={"/astro.webp"}
+              ml={{ base: "-3vh", xl: "-3vw" }}
+              h={{ base: "9vh", xl: "9vw" }}
+              alt=""
+            />
+          </Link>
+        </Flex>
+        <Grid w="100%" templateColumns="auto auto auto">
           <Box h="2px" bg="white" my="auto" />
           <Text
             fontSize="25"
