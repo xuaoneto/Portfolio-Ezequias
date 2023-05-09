@@ -3,7 +3,15 @@ import React from "react";
 import rightarrow from "assets/images/rightarrow.svg";
 import { SubItem } from "./sub-item";
 
-export function MenuItem({ itemName, link, subItems, focus, setFocus, close }) {
+export function MenuItem({
+  itemName,
+  link,
+  subItems,
+  focus = "",
+  setFocus = () => {},
+  subItem,
+  close = () => {},
+}) {
   const [hover, stateHover] = React.useState();
 
   const ref = React.useRef();
@@ -15,7 +23,9 @@ export function MenuItem({ itemName, link, subItems, focus, setFocus, close }) {
       <Link
         ref={ref}
         color={focus === itemName ? "#fac921" : "white"}
-        fontSize={{ base: "13", md: "14", xl: "12", "2xl": "14" }}
+        fontSize={
+          subItem ? "12px" : { base: "13", md: "14", xl: "12", "2xl": "14" }
+        }
         onClick={() => {
           focus === itemName ? setFocus(false) : setFocus(itemName);
           scrollTo ? close(link) : null;
@@ -23,7 +33,7 @@ export function MenuItem({ itemName, link, subItems, focus, setFocus, close }) {
         _hover={{ color: "#fac921" }}
         onMouseOver={() => stateHover(true)}
         onMouseOut={() => stateHover(false)}
-        w="90%"
+        w={subItem ? "100%" : "90%"}
         cursor="pointer"
         display="flex"
         pos="relative"
@@ -58,10 +68,11 @@ export function MenuItem({ itemName, link, subItems, focus, setFocus, close }) {
         <Stack
           pl="10px"
           w="90%"
+          spacing="0"
           fontSize="12px"
           overflow="hidden"
-          h={focus === itemName ? `${subItems.length * 40}px` : "0"}
-          transition="height .3s ease"
+          maxH={focus === itemName ? "300px" : "0"}
+          transition="max-height .4s ease"
         >
           {subItems.map((item, index) => {
             return (
@@ -69,6 +80,7 @@ export function MenuItem({ itemName, link, subItems, focus, setFocus, close }) {
                 key={`SubItem-${index}`}
                 name={item.name}
                 link={item.link}
+                subItems={item.subItems}
               />
             );
           })}

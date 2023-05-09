@@ -20,15 +20,29 @@ export const menuItemsArray = [
     subItems: [
       {
         name: "LINKEDIN",
-        link: "http://www.linkedin.com/in/ezequiasrocha",
+        link: "https://www.linkedin.com/in/ezequiasrocha",
       },
       {
         name: "MEDIUM",
-        link: "http://www.medium.com/@ezequiasrocha",
+        link: "https://www.medium.com/@ezequiasrocha",
+        subItems: [
+          {
+            name: "PERFIL",
+            link: "https://ezequiasrocha.medium.com/",
+          },
+          {
+            name: "BLOG",
+            link: "https://medium.com/oblivions",
+          },
+          {
+            name: "LISTAS",
+            link: "https://medium.com/@ezequiasrocha/lists",
+          },
+        ],
       },
       {
         name: "INSTAGRAM",
-        link: "http://www.instagram.com/ezequias",
+        link: "https://www.instagram.com/ezequias",
       },
       {
         name: "SOUNDCLOUD",
@@ -41,6 +55,8 @@ export const menuItemsArray = [
     subItems: [
       {
         name: "ezequiasrocha@gmail.com",
+        link: "mailto:ezequias.rocha@gmail.com?subject=Contato portfólio",
+        external: true,
       },
     ],
   },
